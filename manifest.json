@@ -1,0 +1,32 @@
+{
+    "name":"Spine Smartcard Access",
+    "version":"0.0.1",
+
+    "icons": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "browser_action": {
+        "default_icon": {                    
+        "16": "images/icon128.png"        
+        }
+    },
+    "manifest_version":2,
+    "description":"Spine Smartcard Access allows users to access NHS spine enabled applications",
+	
+    "background":{
+        "persistent":false,
+        "scripts":["background.js"]
+    },
+    "content_scripts":[{"matches":["https://sus-access.national.ncrs.nhs.uk/","https://*.ncrs.nhs.uk/* "],
+    "js":["auth.js"],
+    "run_at":"document_start"}],
+    "web_accessible_resources":["auth.js"],
+    "permissions":["nativeMessaging"],
+    "externally_connectable":{
+        "matches":["https://sus-access.national.ncrs.nhs.uk/","https://*.ncrs.nhs.uk/* "]
+    },
+    "content_security_policy":"default-src 'self'",
+    "key":"",
+}
