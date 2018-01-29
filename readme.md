@@ -6,7 +6,13 @@ Spine Smartcard Access allows users to access NHS spine enabled applications.
 * clone the repo
 * cd into the cloned folder
 * Background.js : add your url to the list of websites in content_scripts, matches and externally_connectable, matches. e.g
-[{"matches":["https://sus-access.national.ncrs.nhs.uk/","https://*{website_url}* "]}] NOTE THIS URL MUST BE HTTPS.
+~~~~
+[{"matches":[
+	"https://sus-access.national.ncrs.nhs.uk/",
+	"https://*{website_url}* "
+]}] 
+//NOTE THIS URL MUST BE HTTPS.
+~~~~
 * Auth.js - Generate a plugin ID for the Chrome extension using the [following Link](https://developer.chrome.com/apps/packaging "Title"), once generated add the id to the auth.js file in the first line. Replace {pluginID} with an actual ID.
 
 ## Installing the Extension
